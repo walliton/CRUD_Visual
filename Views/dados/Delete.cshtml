@@ -1,0 +1,68 @@
+﻿@model AgendaTelefonica.Models.agenda
+
+@{
+    ViewBag.Title = "Deletar";
+}
+
+
+<div>
+    <h1 style="text-align:center">Deletar</h1>
+    <hr />
+    <div style="padding-left:25%">
+        <h3>Tem certeza que deseja deletar o contato?</h3>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Sobrenome)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Sobrenome)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Telefone)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Celular)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Celular)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color" style="padding-left:10%">
+                <input type="submit" value="Deletar" class="btn btn-danger btn-xs" />
+                <button id="botao" class="btn btn-success btn-xs">
+                    @Html.ActionLink("Voltar para agenda", "Index")
+                </button>
+            </div>
+        }
+    </div>
+</div>

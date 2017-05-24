@@ -1,0 +1,64 @@
+﻿@model AgendaTelefonica.Models.agenda
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<div>
+    <h1 style="text-align:center">Agenda</h1>
+    <hr />
+    <div style="padding-left:25%;">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Sobrenome)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Sobrenome)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Telefone)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Celular)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Celular)
+            </dd>
+
+        </dl>
+    </div>
+    <div style="padding-left:30%;">
+        <button id="botao" class="btn btn-warning btn-xs">
+            @Html.ActionLink("Editar contato", "Edit", new { id = Model.id })
+        </button>
+        <button id="botao" class="btn btn-success btn-xs">
+            @Html.ActionLink("Voltar para agenda", "Index")
+        </button>
+    </div>
+</div>
+
+

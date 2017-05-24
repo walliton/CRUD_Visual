@@ -1,0 +1,43 @@
+﻿@model IEnumerable<AgendaTelefonica.Models.agenda>
+
+@{
+    ViewBag.Title = "Agenda";
+}
+
+<h1 style="text-align:center">Agenda</h1>
+    <hr />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sobrenome)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sobrenome)
+        </td>
+
+        <td>
+            <button id="botao" class="btn btn-info btn-xs">
+                @Html.ActionLink("Detalhes", "Details", new { id = item.id })
+            </button>
+            <button id="botao" class="btn btn-warning btn-xs">
+                @Html.ActionLink("Editar", "Edit", new { id = item.id })
+            </button>
+            <button id="botao" class="btn btn-danger btn-xs">
+                @Html.ActionLink("Deletar", "Delete", new { id = item.id })
+            </button>
+        </td>
+    </tr>
+}
+
+</table>
